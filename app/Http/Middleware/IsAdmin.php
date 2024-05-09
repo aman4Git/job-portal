@@ -15,8 +15,13 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if($request->user()->role != 'admin'){
+        // Check if the user is authenticated
+        if(!$request->user()){
+            return redirect()->route('home');
+        }
 
+        // Check if the requested user is an admin
+        if($request->user()->role != 'admin'){
             session()->flash('error', 'You are not authorized to access this page.');
             return redirect()->route('account.profile');
         }
