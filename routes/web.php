@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,8 @@ Route::post('/saved-job', [JobController::class,'saveJob'])->name('saveJob');
 //Route group for Admin
 Route::group(['prefix' => 'admin','middleware' => 'isAdmin'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/users', [UserController::class, 'index'])->name('admin.users');
+
 
 });
 
