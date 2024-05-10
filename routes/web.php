@@ -28,9 +28,11 @@ Route::post('/saved-job', [JobController::class,'saveJob'])->name('saveJob');
 
 //Route group for Admin
 Route::group(['prefix' => 'admin','middleware' => 'isAdmin'], function () {
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/users', [UserController::class, 'index'])->name('admin.users');
-
+    Route::get('/users/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/users/{id}', [UserController::class, 'update'])->name('admin.users.update');
 
 });
 
