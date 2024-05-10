@@ -70,4 +70,37 @@ class UserController extends Controller
         }
     }
 
+    public function deleteUser(Request $request){
+
+        //Get user id
+        $id = $request->id;
+
+        //Get user by id
+        $user = User::find($id);
+
+        if( $user === null )
+        {
+            //flash message
+            session()->flash('error', 'User not found.');
+
+            //Return response
+            return response()->json([
+                'status' => false,
+            ]);
+        }
+
+        //Delete user
+        $user->delete();
+
+        //flash message
+        session()->flash('success', 'User deleted successfully.');
+
+        //Return response
+        return response()->json([
+           'status' => true,
+        ]);
+
+    }
+
+
 }

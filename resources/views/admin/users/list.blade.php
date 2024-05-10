@@ -64,7 +64,7 @@
                                                                 <li><a class="dropdown-item" href="{{route('admin.users.edit', $user->id)}}"><i
                                                                             class="fa fa-edit" aria-hidden="true"></i>
                                                                         Edit</a></li>
-                                                                <li><a class="dropdown-item" href="#"><i
+                                                                <li><a class="dropdown-item" href="#" onclick="deleteUser({{$user->id}})"><i
                                                                             class="fa fa-trash" aria-hidden="true"></i>
                                                                         Delete</a></li>
                                                             </ul>
@@ -90,4 +90,23 @@
 @endsection
 
 @section('customJs')
+<script type="text/javascript">
+
+function deleteUser(id) {
+
+        if(confirm('Are you sure you want to delete?')) {
+            $.ajax ({
+                url     : '{{route('admin.users.delete')}}',
+                type    : 'delete',
+                data    : {id: id},
+                daatType: 'json',
+                success : function(response) {
+                    window.location.href = '{{route('admin.users')}}'
+                }
+            });
+        }
+
+
+}
+</script>
 @endsection
