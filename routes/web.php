@@ -41,6 +41,8 @@ Route::group(['prefix' => 'admin','middleware' => 'isAdmin'], function () {
 
     //Jobs related routes
     Route::get('/jobs', [JobsController::class, 'index'])->name('admin.jobs');
+    Route::get('/jobs/{id}', [JobsController::class, 'edit'])->name('admin.jobs.edit');
+    Route::put('/jobs/{id}', [JobsController::class, 'update'])->name('admin.jobs.update');
 
 });
 
