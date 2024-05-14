@@ -10036,3 +10036,7 @@ footer .nav-link {
     align-items: center;
     display: flex;
 }
+
+.pagination span{
+    font-size: inherit;
+}
