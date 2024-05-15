@@ -99,4 +99,36 @@ class JobsController extends Controller
         }
 
     }
+
+    public function delete(Request $request){
+
+        //Get job id
+        $jobId = $request->id;
+
+        //Get job by id
+        $job = Job::find($jobId);
+
+        if( $job === null )
+        {
+            //flash message
+            session()->flash('error', 'Job not found.');
+
+            //Return response
+            return response()->json([
+                'status' => false,
+            ]);
+        }
+
+        //Delete job
+        $job->delete();
+
+        //flash message
+        session()->flash('success', 'Job deleted successfully.');
+
+        //Return response
+        return response()->json([
+           'status' => true,
+        ]);
+
+    }
 }
