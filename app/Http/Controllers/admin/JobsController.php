@@ -76,6 +76,8 @@ class JobsController extends Controller
             $job->company_name     = $request->company_name;
             $job->company_location = $request->company_location;
             $job->company_website  = $request->company_website;
+            $job->status  = $request->status;
+            $job->isFeatured  = (!empty($request->isFeatured)) ? $request->isFeatured : 0;
             $job->save();
 
             //Flash message
