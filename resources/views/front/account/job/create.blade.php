@@ -97,8 +97,8 @@
                                 <textarea class="textarea" name="benefits" id="benefits" cols="5" rows="5" placeholder="Benefits"></textarea>
                             </div>
                             <div class="mb-4">
-                                <label for="" class="mb-2">Responsibility</label>
-                                <textarea class="textarea" name="responsibility" id="responsibility" cols="5" rows="5" placeholder="Responsibility"></textarea>
+                                <label for="" class="mb-2">Responsibilities</label>
+                                <textarea class="textarea" name="responsibilities" id="responsibilities" cols="5" rows="5" placeholder="Responsibilities"></textarea>
                             </div>
                             <div class="mb-4">
                                 <label for="" class="mb-2">Qualifications</label>

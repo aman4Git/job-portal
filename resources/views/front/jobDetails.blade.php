@@ -52,9 +52,9 @@
                         </div>
 
 
-                            @if (!empty($job->responsibility))
+                            @if (!empty($job->responsibilities))
                             <div class="single_wrap">
-                                <h4>Responsibility</h4>
+                                <h4>Responsibilities</h4>
 
                             {!! nl2br($job->responsibilities) !!}
                             </div>
