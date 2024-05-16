@@ -28,6 +28,12 @@ Route::get('/jobs/details/{id}', [JobController::class, 'detail'])->name('jobDet
 Route::post('/apply-job', [JobController::class, 'applyJob'])->name('applyJob');
 Route::post('/saved-job', [JobController::class,'saveJob'])->name('saveJob');
 
+//Forgot Password related routes
+Route::get('/forgot-password', [AccountController::class, 'forgotPassword'])->name('account.forgotPassword');
+Route::post('/forgot-password', [AccountController::class, 'processForgotPassword'])->name('account.processForgotPassword');
+Route::get('/reset-password/{token}', [AccountController::class, 'resetPassword'])->name('account.resetPassword');
+Route::post('/reset-password', [AccountController::class, 'processResetPassword'])->name('account.processResetPassword');
+
 //Route group for Admin
 Route::group(['prefix' => 'admin','middleware' => 'isAdmin'], function () {
 
