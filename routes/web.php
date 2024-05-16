@@ -48,7 +48,7 @@ Route::group(['prefix' => 'admin','middleware' => 'isAdmin'], function () {
 
     //Job applications related routes
     Route::get('/job-applications', [JobApplicationController::class, 'index'])->name('admin.jobApplications');
-
+    Route::delete('/job-applications', [JobApplicationController::class, 'delete'])->name('admin.jobApplications.delete');
 
 });
 

@@ -105,12 +105,12 @@ function deleteJobApplication(id) {
 
         if(confirm('Are you sure you want to delete?')) {
             $.ajax ({
-                url     : '{{route('admin.jobs.delete')}}',
+                url     : '{{route('admin.jobApplications.delete')}}',
                 type    : 'delete',
                 data    : {id: id},
                 daatType: 'json',
                 success : function(response) {
-                    window.location.href = '{{route('admin.jobs')}}'
+                    window.location.href = '{{route('admin.jobApplications')}}'
                 }
             });
         }
