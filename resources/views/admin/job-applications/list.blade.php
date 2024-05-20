@@ -65,13 +65,13 @@
 
                                                 <td>
                                                     <div class="action-dots">
-                                                        <button href="#" class="btn" data-bs-toggle="dropdown"
+                                                        <button class="btn" data-bs-toggle="dropdown"
                                                             aria-expanded="false">
                                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-end">
 
-                                                            <li><a class="dropdown-item" onclick="deleteJobApplication({{ $application->id }})" href="#" ><i
+                                                            <li><a class="dropdown-item" onclick="deleteJobApplication({{ $application->id }})" ><i
                                                                         class="fa fa-trash" aria-hidden="true"></i>
                                                                     Delete</a></li>
                                                         </ul>

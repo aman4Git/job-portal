@@ -85,7 +85,7 @@
 
                             @if (Auth::check())
 
-                            <a href="#" onclick="saveJob({{ $job->id }})" class="btn btn-secondary">Save</a>
+                            <a onclick="saveJob({{ $job->id }})" class="btn btn-secondary">Save</a>
 
                             @else
                                 <a href="javascript:void(0)" class="btn btn-secondary disabled ">Login to Save</a>
@@ -93,7 +93,7 @@
 
                             @if (Auth::check())
 
-                                <a href="#" onclick="applyJob({{ $job->id }})"  class="btn btn-primary">Apply</a>
+                                <a onclick="applyJob({{ $job->id }})"  class="btn btn-primary">Apply</a>
 
                             @else
                                 <a href="javascript:void(0)" class="btn btn-primary disabled ">Login to Apply</a>
@@ -217,6 +217,7 @@ function applyJob(id){
             data: { id: id },
             dataType: 'json',
             success: function (response) {
+                // console.log(response);
                 window.location.href='{{ url()->current()}}';
             }
         });
